@@ -34,14 +34,17 @@
   .sec-h .zh{display:block; font-family:"Noto Serif TC",serif; font-size:.95rem; color:var(--gold); letter-spacing:.05em; margin-top:.15rem}
   .sec-h::after{content:"❧"; display:block; color:var(--gold); font-size:1rem; margin:.3rem 0 1rem}
 
-  .item{padding:.55rem 0; border-bottom:1px dotted var(--line)}
+  .item{padding:.6rem 0; border-bottom:1px dotted var(--line)}
   .item:last-child{border-bottom:0}
   .item .row{display:flex; align-items:baseline; gap:.5rem}
-  .item .en{flex:1; font-weight:600; font-size:1.02rem; color:var(--ink)}
+  .item .it{flex:1; font-weight:600; font-size:1.02rem; color:var(--ink)}
   .item .al{font-size:.72rem; color:var(--soft); white-space:nowrap}
   .item .dots{flex:1; border-bottom:1px dotted var(--line); transform:translateY(-.25rem); min-width:1rem}
   .item .price{font-family:"Cormorant Garamond",serif; font-weight:600; font-size:1.05rem; color:var(--gold); white-space:nowrap}
-  .item .zh{font-family:"Noto Serif TC",serif; font-size:.9rem; color:var(--en); margin-top:.15rem}
+  .item .ln{font-size:.88rem; margin-top:.18rem; display:flex; gap:.45rem}
+  .item .lang{flex:0 0 auto; font-size:.6rem; font-weight:700; color:var(--gold); letter-spacing:.06em; width:1.5rem; text-align:right; padding-top:.15rem}
+  .item .en{font-family:"Cormorant Garamond",Georgia,serif; font-style:italic; color:var(--en)}
+  .item .zh{font-family:"Noto Serif TC",serif; color:var(--en)}
 
   .quote{background:rgba(169,128,47,.08); border:1px solid var(--line); border-radius:4px;
     padding:1rem 1.1rem; margin:1.6rem 0; font-family:"Cormorant Garamond",serif; font-style:italic;
@@ -67,7 +70,7 @@
   <header class="top">
     <div class="brand">LA CARCIOFERIA<span class="emblem">🌿</span></div>
     <div class="script">Troiani</div>
-    <div class="note">英文原菜單 ＋ 中文翻譯 · 非官方,僅供參考</div>
+    <div class="note">義大利文 · 英文 · 中文 三語對照 · 非官方,僅供參考<br>(原菜單照為英文;義大利文為對照補註)</div>
   </header>
   <main id="menu"></main>
   <div class="foot">GOOD FOOD IS HEALTHY<span class="zh">好食物有益健康</span></div>
@@ -76,54 +79,54 @@
 
 <script>
 const SECTIONS=[
- {en:"Appetizers and Side Dishes", zh:"開胃菜與配菜", items:[
-  {en:"Troiani potatoes", al:"1,6,7", p:"€14,00", zh:"Troiani 招牌馬鈴薯"},
-  {en:"Porcini mushroom salad", al:"1,6,10", p:"€18,00", zh:"牛肝菌菇沙拉"},
-  {en:"Artichoke and truffle salad", al:"1,6,10", p:"€22,00", zh:"洋薊松露沙拉"},
-  {en:"Puntarelle salad with garlic sauce", al:"1,6", p:"€14,00", zh:"蒲公英菊苣(puntarelle)沙拉佐蒜醬"},
-  {en:"Puntarelle salad with truffle", al:"1,6,10", p:"€20,00", zh:"蒲公英菊苣沙拉佐松露"},
-  {en:"Artichoke and orange salad", al:"1,6", p:"€20,00", zh:"洋薊柳橙沙拉"},
-  {en:"Tomato, porcini mushroom, Tropea onion and truffle salad", al:"1,6,10", p:"€22,00", zh:"番茄、牛肝菌、Tropea 紅洋蔥與松露沙拉"},
-  {en:"Tropea onions in sweet and sour", al:"1,6", p:"€14,00", zh:"糖醋 Tropea 紅洋蔥"},
-  {en:"Pan-fried Parmesan aubergines", al:"1,7", p:"€16,00", zh:"帕瑪森起司煎茄子"},
-  {en:"Express sweet and sour kraut with tomato and basil", al:"1,6", p:"€14,00", zh:"快醃糖醋高麗菜佐番茄與羅勒"},
-  {en:"Eggs, onion and bacon", al:"3,6", p:"€14,00", zh:"炒蛋、洋蔥與培根"},
+ {it:"Antipasti e Contorni", en:"Appetizers and Side Dishes", zh:"開胃菜與配菜", items:[
+  {it:"Patate Troiani", en:"Troiani potatoes", al:"1,6,7", p:"€14,00", zh:"Troiani 招牌馬鈴薯"},
+  {it:"Insalata di funghi porcini", en:"Porcini mushroom salad", al:"1,6,10", p:"€18,00", zh:"牛肝菌菇沙拉"},
+  {it:"Insalata di carciofi e tartufo", en:"Artichoke and truffle salad", al:"1,6,10", p:"€22,00", zh:"洋薊松露沙拉"},
+  {it:"Insalata di puntarelle con salsa all'aglio", en:"Puntarelle salad with garlic sauce", al:"1,6", p:"€14,00", zh:"蒲公英菊苣(puntarelle)沙拉佐蒜醬"},
+  {it:"Insalata di puntarelle al tartufo", en:"Puntarelle salad with truffle", al:"1,6,10", p:"€20,00", zh:"蒲公英菊苣沙拉佐松露"},
+  {it:"Insalata di carciofi e arance", en:"Artichoke and orange salad", al:"1,6", p:"€20,00", zh:"洋薊柳橙沙拉"},
+  {it:"Insalata di pomodoro, funghi porcini, cipolla di Tropea e tartufo", en:"Tomato, porcini mushroom, Tropea onion and truffle salad", al:"1,6,10", p:"€22,00", zh:"番茄、牛肝菌、Tropea 紅洋蔥與松露沙拉"},
+  {it:"Cipolle di Tropea in agrodolce", en:"Tropea onions in sweet and sour", al:"1,6", p:"€14,00", zh:"糖醋 Tropea 紅洋蔥"},
+  {it:"Melanzane alla parmigiana in padella", en:"Pan-fried Parmesan aubergines", al:"1,7", p:"€16,00", zh:"帕瑪森起司煎茄子"},
+  {it:"Crauti express in agrodolce con pomodoro e basilico", en:"Express sweet and sour kraut with tomato and basil", al:"1,6", p:"€14,00", zh:"快醃糖醋高麗菜佐番茄與羅勒"},
+  {it:"Uova, cipolla e pancetta", en:"Eggs, onion and bacon", al:"3,6", p:"€14,00", zh:"炒蛋、洋蔥與培根"},
  ]},
- {en:"Other Appetizers and Side Dishes", zh:"其他開胃菜與配菜", items:[
-  {en:"Trio of artichokes (raw, fried, fried)", al:"1,6,7,10", p:"€15,00", zh:"洋薊三吃(生、炸、炸)"},
-  {en:"Artichokes and potatoes", al:"1,6", p:"€16,00", zh:"洋薊與馬鈴薯"},
-  {en:"Potatoes and porcini mushrooms", al:"1,6", p:"€19,00", zh:"馬鈴薯與牛肝菌"},
-  {en:"Porcini mushrooms in a pan", al:"1,6", p:"€18,00", zh:"香煎牛肝菌"},
-  {en:"Porcini mushrooms and truffle", al:"1,6,10", p:"€22,00", zh:"牛肝菌與松露"},
-  {en:"Golden fried artichokes", al:"1,6", p:"€16,00", zh:"黃金炸洋薊(猶太式炸洋薊)"},
-  {en:"Artichokes au gratin", al:"1,6,7", p:"€14,00", zh:"焗烤洋薊"},
+ {it:"Altri Antipasti e Contorni", en:"Other Appetizers and Side Dishes", zh:"其他開胃菜與配菜", items:[
+  {it:"Trio di carciofi (crudo, fritto, fritto)", en:"Trio of artichokes (raw, fried, fried)", al:"1,6,7,10", p:"€15,00", zh:"洋薊三吃(生、炸、炸)"},
+  {it:"Carciofi e patate", en:"Artichokes and potatoes", al:"1,6", p:"€16,00", zh:"洋薊與馬鈴薯"},
+  {it:"Patate e funghi porcini", en:"Potatoes and porcini mushrooms", al:"1,6", p:"€19,00", zh:"馬鈴薯與牛肝菌"},
+  {it:"Funghi porcini in padella", en:"Porcini mushrooms in a pan", al:"1,6", p:"€18,00", zh:"香煎牛肝菌"},
+  {it:"Funghi porcini e tartufo", en:"Porcini mushrooms and truffle", al:"1,6,10", p:"€22,00", zh:"牛肝菌與松露"},
+  {it:"Carciofi dorati e fritti (alla giudia)", en:"Golden fried artichokes", al:"1,6", p:"€16,00", zh:"黃金炸洋薊(猶太式炸洋薊)"},
+  {it:"Carciofi gratinati", en:"Artichokes au gratin", al:"1,6,7", p:"€14,00", zh:"焗烤洋薊"},
  ]},
  {quote:"Artichokes were here before Amatriciana, before Carbonara. Artichokes are ancient. In 1604, the painter Michelangelo Merisi da Caravaggio threw an artichoke in the face of a waiter in a tavern right here nearby.",
   qzh:"洋薊比 Amatriciana、比 Carbonara 更早就存在,洋薊是非常古老的食材。1604 年,畫家卡拉瓦喬(Michelangelo Merisi da Caravaggio)就在附近的一家小酒館,把一顆洋薊砸向侍者的臉。"},
- {en:"First Courses", zh:"第一道 · 麵食(Primi)", items:[
-  {en:"Paccheri with artichokes and gorgonzola", al:"1,6,7,10", p:"€18,00", zh:"大管麵 Paccheri 佐洋薊與戈貢佐拉藍紋起司"},
-  {en:"Paccheri with artichokes and bacon", al:"1,6,10", p:"€14,00", zh:"大管麵佐洋薊與培根"},
-  {en:"Paccheri amatriciana with artichokes", al:"1,6,10", p:"€14,00", zh:"阿瑪翠斯醬(番茄培根)大管麵佐洋薊"},
-  {en:"Gnocchi with anchovies, puntarelle and pecorino", al:"1,4,6,7,10", p:"€16,00", zh:"馬鈴薯麵疙瘩佐鯷魚、蒲公英菊苣與佩克里諾羊起司"},
-  {en:"Gnocchi cacio e pepe with artichokes", al:"1,6,7,10", p:"€16,00", zh:"起司黑胡椒(cacio e pepe)麵疙瘩佐洋薊"},
-  {en:"Gnocchi with porcini mushrooms, truffle and artichokes", al:"1,6,10", p:"€22,00", zh:"麵疙瘩佐牛肝菌、松露與洋薊"},
-  {en:"Fettuccine carbonara with artichokes", al:"1,3,6,7,10", p:"€16,00", zh:"卡波納拉(培根蛋黃)寬麵佐洋薊"},
-  {en:"Fettuccine with artichokes and mascarpone", al:"1,3,6,7,10", p:"€16,00", zh:"寬麵佐洋薊與馬斯卡彭起司"},
-  {en:"Fettuccine with four cheeses and artichokes", al:"1,3,6,7,10", p:"€18,00", zh:"四種起司寬麵佐洋薊"},
+ {it:"Primi Piatti", en:"First Courses", zh:"第一道 · 麵食(Primi)", items:[
+  {it:"Paccheri con carciofi e gorgonzola", en:"Paccheri with artichokes and gorgonzola", al:"1,6,7,10", p:"€18,00", zh:"大管麵 Paccheri 佐洋薊與戈貢佐拉藍紋起司"},
+  {it:"Paccheri con carciofi e pancetta", en:"Paccheri with artichokes and bacon", al:"1,6,10", p:"€14,00", zh:"大管麵佐洋薊與培根"},
+  {it:"Paccheri all'amatriciana con carciofi", en:"Paccheri amatriciana with artichokes", al:"1,6,10", p:"€14,00", zh:"阿瑪翠斯醬(番茄培根)大管麵佐洋薊"},
+  {it:"Gnocchi con alici, puntarelle e pecorino", en:"Gnocchi with anchovies, puntarelle and pecorino", al:"1,4,6,7,10", p:"€16,00", zh:"馬鈴薯麵疙瘩佐鯷魚、蒲公英菊苣與佩克里諾羊起司"},
+  {it:"Gnocchi cacio e pepe con carciofi", en:"Gnocchi cacio e pepe with artichokes", al:"1,6,7,10", p:"€16,00", zh:"起司黑胡椒(cacio e pepe)麵疙瘩佐洋薊"},
+  {it:"Gnocchi con funghi porcini, tartufo e carciofi", en:"Gnocchi with porcini mushrooms, truffle and artichokes", al:"1,6,10", p:"€22,00", zh:"麵疙瘩佐牛肝菌、松露與洋薊"},
+  {it:"Fettuccine alla carbonara con carciofi", en:"Fettuccine carbonara with artichokes", al:"1,3,6,7,10", p:"€16,00", zh:"卡波納拉(培根蛋黃)寬麵佐洋薊"},
+  {it:"Fettuccine con carciofi e mascarpone", en:"Fettuccine with artichokes and mascarpone", al:"1,3,6,7,10", p:"€16,00", zh:"寬麵佐洋薊與馬斯卡彭起司"},
+  {it:"Fettuccine ai quattro formaggi con carciofi", en:"Fettuccine with four cheeses and artichokes", al:"1,3,6,7,10", p:"€18,00", zh:"四種起司寬麵佐洋薊"},
  ]},
- {en:"Main Courses – Pasta", zh:"主餐 · 麵食", items:[
-  {en:"Paccheri with artichokes and gorgonzola", al:"1,6,7,10", p:"€18,00", zh:"大管麵 Paccheri 佐洋薊與戈貢佐拉藍紋起司"},
-  {en:"Paccheri with artichokes and bacon", al:"1,6,10", p:"€14,00", zh:"大管麵佐洋薊與培根"},
-  {en:"Paccheri amatriciana with artichokes", al:"1,6,10", p:"€14,00", zh:"阿瑪翠斯醬大管麵佐洋薊"},
-  {en:"Gnocchi with anchovies, puntarelle and pecorino", al:"1,4,6,7,10", p:"€16,00", zh:"麵疙瘩佐鯷魚、蒲公英菊苣與佩克里諾羊起司"},
-  {en:"Gnocchi cacio e pepe with artichokes", al:"1,6,7,10", p:"€16,00", zh:"起司黑胡椒麵疙瘩佐洋薊"},
-  {en:"Gnocchi with porcini mushrooms, truffle and artichokes", al:"1,6,10", p:"€22,00", zh:"麵疙瘩佐牛肝菌、松露與洋薊"},
-  {en:"Fettuccine carbonara with artichokes", al:"1,3,6,7,10", p:"€16,00", zh:"卡波納拉寬麵佐洋薊"},
-  {en:"Fettuccine with artichokes and mascarpone", al:"1,3,6,7,10", p:"€16,00", zh:"寬麵佐洋薊與馬斯卡彭起司"},
-  {en:"Fettuccine with four cheeses and artichokes", al:"1,3,6,7,10", p:"€18,00", zh:"四種起司寬麵佐洋薊"},
+ {it:"Secondi – Pasta", en:"Main Courses – Pasta", zh:"主餐 · 麵食", items:[
+  {it:"Paccheri con carciofi e gorgonzola", en:"Paccheri with artichokes and gorgonzola", al:"1,6,7,10", p:"€18,00", zh:"大管麵 Paccheri 佐洋薊與戈貢佐拉藍紋起司"},
+  {it:"Paccheri con carciofi e pancetta", en:"Paccheri with artichokes and bacon", al:"1,6,10", p:"€14,00", zh:"大管麵佐洋薊與培根"},
+  {it:"Paccheri all'amatriciana con carciofi", en:"Paccheri amatriciana with artichokes", al:"1,6,10", p:"€14,00", zh:"阿瑪翠斯醬大管麵佐洋薊"},
+  {it:"Gnocchi con alici, puntarelle e pecorino", en:"Gnocchi with anchovies, puntarelle and pecorino", al:"1,4,6,7,10", p:"€16,00", zh:"麵疙瘩佐鯷魚、蒲公英菊苣與佩克里諾羊起司"},
+  {it:"Gnocchi cacio e pepe con carciofi", en:"Gnocchi cacio e pepe with artichokes", al:"1,6,7,10", p:"€16,00", zh:"起司黑胡椒麵疙瘩佐洋薊"},
+  {it:"Gnocchi con funghi porcini, tartufo e carciofi", en:"Gnocchi with porcini mushrooms, truffle and artichokes", al:"1,6,10", p:"€22,00", zh:"麵疙瘩佐牛肝菌、松露與洋薊"},
+  {it:"Fettuccine alla carbonara con carciofi", en:"Fettuccine carbonara with artichokes", al:"1,3,6,7,10", p:"€16,00", zh:"卡波納拉寬麵佐洋薊"},
+  {it:"Fettuccine con carciofi e mascarpone", en:"Fettuccine with artichokes and mascarpone", al:"1,3,6,7,10", p:"€16,00", zh:"寬麵佐洋薊與馬斯卡彭起司"},
+  {it:"Fettuccine ai quattro formaggi con carciofi", en:"Fettuccine with four cheeses and artichokes", al:"1,3,6,7,10", p:"€18,00", zh:"四種起司寬麵佐洋薊"},
  ]},
- {en:"Desserts", zh:"甜點", items:[
-  {en:"Strawberries with whipped cream", al:"7", p:"€5,00", zh:"草莓佐鮮奶油"},
+ {it:"Dolci", en:"Desserts", zh:"甜點", items:[
+  {it:"Fragole con panna montata", en:"Strawberries with whipped cream", al:"7", p:"€5,00", zh:"草莓佐鮮奶油"},
  ]},
 ];
 const LEGEND=[["1","Cereals containing gluten · 含麩質穀物"],["2","Crustaceans · 甲殼類"],["3","Eggs · 蛋"],["4","Fish · 魚"],["5","Peanuts · 花生"],["6","Soybeans · 大豆"],["7","Milk (incl. lactose) · 奶(含乳糖)"],["8","Nuts · 堅果"],["9","Celery · 芹菜"],["10","Mustard · 芥末"],["11","Sesame seeds · 芝麻"],["12","Sulfur dioxide & sulfites · 二氧化硫與亞硫酸鹽"],["13","Lupin · 羽扇豆"],["14","Molluscs · 軟體動物"]];
@@ -131,10 +134,11 @@ const LEGEND=[["1","Cereals containing gluten · 含麩質穀物"],["2","Crustac
 function secHTML(s){
   if(s.quote) return `<div class="quote">${s.quote}<span class="zh">${s.qzh}</span></div>`;
   return `<section>
-    <div class="sec-h">${s.en}<span class="zh">${s.zh}</span></div>
+    <div class="sec-h">${s.it}<span class="zh">${s.en} · ${s.zh}</span></div>
     ${s.items.map(x=>`<div class="item">
-      <div class="row"><span class="en">${x.en}</span>${x.al?`<span class="al">(${x.al})</span>`:""}<span class="dots"></span><span class="price">${x.p}</span></div>
-      <div class="zh">${x.zh}</div></div>`).join("")}
+      <div class="row"><span class="it">${x.it}</span>${x.al?`<span class="al">(${x.al})</span>`:""}<span class="dots"></span><span class="price">${x.p}</span></div>
+      <div class="ln"><span class="lang">EN</span><span class="en">${x.en}</span></div>
+      <div class="ln"><span class="lang">中</span><span class="zh">${x.zh}</span></div></div>`).join("")}
   </section>`;
 }
 document.getElementById("menu").innerHTML = SECTIONS.map(secHTML).join("") + `
