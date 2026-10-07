@@ -4,152 +4,240 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>La Carcioferia · Menu</title>
-<meta name="description" content="La Carcioferia Troiani 菜單(英文原文 + 中文翻譯)">
+<meta name="description" content="La Carcioferia Troiani 菜單(義大利文 / 英文 / 中文)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#f7f1e3; --ink:#3a2e1c; --soft:#7a6a4f; --gold:#a9802f; --line:#d8c9a6; --en:#5c4e38;
-  }
+  :root{--paper:#f7f1e3; --ink:#3a2e1c; --soft:#7a6a4f; --gold:#a9802f; --line:#d8c9a6; --en:#5c4e38; --accent:#8a2f22}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#efe6d2; color:var(--ink);
-    font-family:"Noto Serif TC","Cormorant Garamond",Georgia,serif; line-height:1.5;
-    -webkit-font-smoothing:antialiased; padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
-  .sheet{max-width:760px; margin:0 auto; background:var(--paper);
-    border:2px solid var(--gold); outline:1px solid var(--line); outline-offset:3px;
-    padding:2rem 1.4rem 3rem; box-shadow:0 10px 40px -20px rgba(80,60,20,.5)}
-  @media(min-width:640px){ .sheet{margin:1.2rem auto; padding:2.6rem 2.4rem} }
+  body{background:#efe6d2; color:var(--ink); font-family:"Noto Serif TC","Cormorant Garamond",Georgia,serif; line-height:1.5; -webkit-font-smoothing:antialiased; padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+  .sheet{max-width:780px; margin:0 auto; background:var(--paper); border:2px solid var(--gold); outline:1px solid var(--line); outline-offset:3px; padding:2rem 1.3rem 3rem; box-shadow:0 10px 40px -20px rgba(80,60,20,.5)}
+  @media(min-width:640px){.sheet{margin:1.2rem auto; padding:2.6rem 2.4rem}}
 
-  header.top{text-align:center; border-bottom:1px double var(--gold); padding-bottom:1.1rem; margin-bottom:1.6rem}
-  .brand{font-family:"Cormorant Garamond",Georgia,serif; font-weight:600; font-size:clamp(2.2rem,8vw,3.2rem);
-    letter-spacing:.06em; color:var(--ink); line-height:1}
-  .brand .emblem{display:block; font-size:1.6rem; margin:.3rem 0}
-  .script{font-family:"Cormorant Garamond",serif; font-style:italic; font-size:1.3rem; color:var(--gold)}
-  .top .note{font-size:.8rem; color:var(--soft); margin-top:.7rem; font-family:"Noto Serif TC",serif}
+  header.top{text-align:center; border-bottom:1px double var(--gold); padding-bottom:1.1rem; margin-bottom:1rem}
+  .brand{font-family:"Cormorant Garamond",Georgia,serif; font-weight:700; font-size:clamp(2.1rem,8vw,3.1rem); letter-spacing:.05em; line-height:1}
+  .emblem{font-size:1.5rem; margin:.25rem 0}
+  .script{font-family:"Cormorant Garamond",serif; font-style:italic; font-size:1.25rem; color:var(--gold)}
+  .tagline{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--soft); margin-top:.3rem}
 
-  section{margin-top:2rem}
-  .sec-h{text-align:center; font-family:"Cormorant Garamond",serif; font-weight:600; letter-spacing:.08em;
-    font-size:1.5rem; color:var(--ink); text-transform:uppercase}
-  .sec-h .zh{display:block; font-family:"Noto Serif TC",serif; font-size:.95rem; color:var(--gold); letter-spacing:.05em; margin-top:.15rem}
+  .toc{display:flex; flex-wrap:wrap; gap:.35rem; justify-content:center; margin:1rem 0 .3rem}
+  .toc a{font-size:.72rem; color:var(--en); text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:.18rem .6rem}
+
+  .notice{background:rgba(169,128,47,.08); border:1px solid var(--line); border-radius:6px; padding:.8rem 1rem; margin:1rem 0; text-align:center; font-size:.82rem; color:var(--en); line-height:1.7}
+  .notice .svc{color:var(--accent); font-weight:700; font-size:.9rem}
+
+  section{margin-top:2rem; scroll-margin-top:1rem}
+  .sec-h{text-align:center; font-family:"Cormorant Garamond",serif; font-weight:700; letter-spacing:.07em; font-size:1.5rem; text-transform:uppercase}
+  .sec-h .en{display:block; font-size:1rem; color:var(--soft); letter-spacing:.06em; margin-top:.05rem}
+  .sec-h .zh{display:block; font-family:"Noto Serif TC",serif; font-size:.9rem; color:var(--gold); letter-spacing:.04em; margin-top:.12rem}
   .sec-h::after{content:"❧"; display:block; color:var(--gold); font-size:1rem; margin:.3rem 0 1rem}
 
   .item{padding:.6rem 0; border-bottom:1px dotted var(--line)}
   .item:last-child{border-bottom:0}
   .item .row{display:flex; align-items:baseline; gap:.5rem}
-  .item .it{flex:1; font-weight:600; font-size:1.02rem; color:var(--ink)}
-  .item .al{font-size:.72rem; color:var(--soft); white-space:nowrap}
-  .item .dots{flex:1; border-bottom:1px dotted var(--line); transform:translateY(-.25rem); min-width:1rem}
-  .item .price{font-family:"Cormorant Garamond",serif; font-weight:600; font-size:1.05rem; color:var(--gold); white-space:nowrap}
-  .item .ln{font-size:.88rem; margin-top:.18rem; display:flex; gap:.45rem}
-  .item .lang{flex:0 0 auto; font-size:.6rem; font-weight:700; color:var(--gold); letter-spacing:.06em; width:1.5rem; text-align:right; padding-top:.15rem}
+  .item .it{flex:1; font-weight:600; font-size:1.0rem; color:var(--ink)}
+  .item .dots{flex:1; border-bottom:1px dotted var(--line); transform:translateY(-.25rem); min-width:.8rem}
+  .item .price{font-family:"Cormorant Garamond",serif; font-weight:600; font-size:1.02rem; color:var(--gold); white-space:nowrap}
+  .item .ln{font-size:.86rem; margin-top:.16rem; display:flex; gap:.45rem}
+  .item .lab{flex:0 0 auto; font-size:.58rem; font-weight:700; color:var(--gold); letter-spacing:.05em; width:1.4rem; text-align:right; padding-top:.14rem}
   .item .en{font-family:"Cormorant Garamond",Georgia,serif; font-style:italic; color:var(--en)}
   .item .zh{font-family:"Noto Serif TC",serif; color:var(--en)}
 
-  .quote{background:rgba(169,128,47,.08); border:1px solid var(--line); border-radius:4px;
-    padding:1rem 1.1rem; margin:1.6rem 0; font-family:"Cormorant Garamond",serif; font-style:italic;
-    color:var(--en); font-size:1.02rem; line-height:1.6}
-  .quote .zh{display:block; font-family:"Noto Serif TC",serif; font-style:normal; font-size:.85rem; color:var(--soft); margin-top:.5rem}
+  .feature{margin:1.6rem 0; border:1.5px solid var(--gold); border-radius:8px; padding:1.1rem; background:linear-gradient(180deg,rgba(169,128,47,.12),rgba(169,128,47,.04)); text-align:center}
+  .feature .ft-t{font-family:"Cormorant Garamond",serif; font-weight:700; font-size:1.3rem}
+  .feature .ft-p{color:var(--accent); font-weight:700; font-size:1.05rem; margin:.3rem 0}
+  .feature .ft-d{font-size:.86rem; color:var(--en); line-height:1.6}
 
-  .legend{margin-top:2rem; border-top:1px double var(--gold); padding-top:1.1rem}
-  .legend h3{text-align:center; font-family:"Cormorant Garamond",serif; letter-spacing:.08em; font-size:1.15rem; margin-bottom:.2rem}
-  .legend h3 .zh{display:block; font-family:"Noto Serif TC",serif; font-size:.82rem; color:var(--gold)}
-  .legend .grid{display:grid; grid-template-columns:1fr 1fr; gap:.2rem 1.2rem; margin-top:.9rem; font-size:.82rem; color:var(--en)}
-  @media(max-width:460px){ .legend .grid{grid-template-columns:1fr} }
-  .legend .g{display:flex; gap:.4rem} .legend .g b{color:var(--gold); min-width:1.3rem}
+  .setmenu{margin:1.4rem 0; border:1px solid var(--line); border-radius:8px; padding:1rem 1.1rem; background:rgba(255,255,255,.35)}
+  .setmenu .sm-h{display:flex; align-items:baseline; justify-content:space-between; gap:.6rem; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:.5rem}
+  .setmenu .sm-t{font-family:"Cormorant Garamond",serif; font-weight:700; font-size:1.2rem}
+  .setmenu .sm-t .zh{display:block; font-family:"Noto Serif TC",serif; font-size:.85rem; color:var(--gold)}
+  .setmenu .sm-p{font-family:"Cormorant Garamond",serif; font-weight:700; font-size:1.2rem; color:var(--accent); white-space:nowrap}
+  .setmenu .sm-note{font-size:.76rem; color:var(--soft); margin:.3rem 0 .6rem}
+  .setmenu .grp{margin-top:.6rem}
+  .setmenu .grp-t{font-weight:700; font-size:.9rem; color:var(--gold)}
+  .setmenu .li{font-size:.85rem; color:var(--en); padding:.15rem 0 .15rem .6rem; line-height:1.5}
+  .setmenu .li .z{color:var(--en)}
 
-  .notice{margin-top:1.6rem; text-align:center; font-size:.82rem; color:var(--soft); line-height:1.7}
-  .foot{text-align:center; margin-top:2rem; padding-top:1.1rem; border-top:1px double var(--gold);
-    font-family:"Cormorant Garamond",serif; letter-spacing:.14em; font-size:1.25rem; color:var(--ink)}
-  .foot .zh{display:block; font-family:"Noto Serif TC",serif; font-size:.78rem; color:var(--soft); letter-spacing:.05em; margin-top:.4rem}
-  .disc{text-align:center; font-size:.72rem; color:var(--soft); margin-top:1.2rem; font-family:"Noto Serif TC",serif}
+  .wines .wg{margin-top:1rem}
+  .wines .wg-t{font-family:"Cormorant Garamond",serif; font-weight:700; font-size:1.1rem; color:var(--ink); border-bottom:1px solid var(--line); padding-bottom:.2rem}
+  .wines .w{display:flex; align-items:baseline; gap:.5rem; font-size:.84rem; padding:.28rem 0; border-bottom:1px dotted var(--line)}
+  .wines .w .wn{flex:1; font-weight:600; color:var(--ink)}
+  .wines .w .wm{color:var(--soft); font-size:.76rem; font-style:italic}
+  .wines .w .wp{font-family:"Cormorant Garamond",serif; font-weight:600; color:var(--gold); white-space:nowrap}
+  .wines .wnote{font-size:.76rem; color:var(--soft); margin-top:.6rem}
+
+  .foot{text-align:center; margin-top:2.2rem; padding-top:1.1rem; border-top:1px double var(--gold); font-family:"Cormorant Garamond",serif; letter-spacing:.1em; font-size:1.15rem; color:var(--ink)}
+  .foot .zh{display:block; font-family:"Noto Serif TC",serif; font-size:.78rem; color:var(--soft); margin-top:.4rem}
+  .disc{text-align:center; font-size:.72rem; color:var(--soft); margin-top:1rem; font-family:"Noto Serif TC",serif}
 </style>
 </head>
 <body>
 <div class="sheet">
   <header class="top">
     <div class="brand">LA CARCIOFERIA<span class="emblem">🌿</span></div>
-    <div class="script">Troiani</div>
+    <div class="script">Troiani · Roma</div>
+    <div class="tagline">The Artichoke House of Rome · 羅馬洋薊之家</div>
+    <nav class="toc" id="toc"></nav>
+    <div class="notice">
+      <span class="svc">Servizio €1,50 a persona · Service charge €1.50/person · 服務費 每人 €1.50</span><br>
+      本店餐點可能含不同過敏原,無法保證完全無交叉污染;點餐前請告知店員您的過敏或飲食限制。<br>
+      <span style="font-style:italic;color:var(--soft)">Various allergens are handled in our kitchen; please inform our staff of any allergies before ordering.</span>
+    </div>
   </header>
   <main id="menu"></main>
-  <div class="foot">GOOD FOOD IS HEALTHY<span class="zh">好食物有益健康</span></div>
-  <div class="disc">菜色/價格以店家現場為準;過敏原請以店員說明為準</div>
+  <div class="foot">Sapori autentici di Roma<span class="zh">正宗羅馬風味 · 菜色與價格以店家現場為準</span></div>
+  <div class="disc">菜名後括號數字為過敏原代號;部分酒單項目在原菜單照中被遮住,以可辨識者為準。</div>
 </div>
 
 <script>
+const AL={1:"含麩質穀物",2:"甲殼類",3:"蛋",4:"魚",5:"花生",6:"大豆",7:"奶(含乳糖)",8:"堅果",9:"芹菜",10:"芥末",11:"芝麻",12:"二氧化硫/亞硫酸鹽",13:"羽扇豆",14:"軟體動物"};
+
 const SECTIONS=[
- {it:"Antipasti e Contorni", en:"Appetizers and Side Dishes", zh:"開胃菜與配菜", items:[
-  {it:"Patate Troiani", en:"Troiani potatoes", al:"1,6,7", p:"€14,00", zh:"Troiani 招牌馬鈴薯"},
-  {it:"Insalata di funghi porcini", en:"Porcini mushroom salad", al:"1,6,10", p:"€18,00", zh:"牛肝菌菇沙拉"},
-  {it:"Insalata di carciofi e tartufo", en:"Artichoke and truffle salad", al:"1,6,10", p:"€22,00", zh:"洋薊松露沙拉"},
-  {it:"Insalata di puntarelle con salsa all'aglio", en:"Puntarelle salad with garlic sauce", al:"1,6", p:"€14,00", zh:"蒲公英菊苣(puntarelle)沙拉佐蒜醬"},
-  {it:"Insalata di puntarelle al tartufo", en:"Puntarelle salad with truffle", al:"1,6,10", p:"€20,00", zh:"蒲公英菊苣沙拉佐松露"},
-  {it:"Insalata di carciofi e arance", en:"Artichoke and orange salad", al:"1,6", p:"€20,00", zh:"洋薊柳橙沙拉"},
-  {it:"Insalata di pomodoro, funghi porcini, cipolla di Tropea e tartufo", en:"Tomato, porcini mushroom, Tropea onion and truffle salad", al:"1,6,10", p:"€22,00", zh:"番茄、牛肝菌、Tropea 紅洋蔥與松露沙拉"},
-  {it:"Cipolle di Tropea in agrodolce", en:"Tropea onions in sweet and sour", al:"1,6", p:"€14,00", zh:"糖醋 Tropea 紅洋蔥"},
-  {it:"Melanzane alla parmigiana in padella", en:"Pan-fried Parmesan aubergines", al:"1,7", p:"€16,00", zh:"帕瑪森起司煎茄子"},
-  {it:"Crauti express in agrodolce con pomodoro e basilico", en:"Express sweet and sour kraut with tomato and basil", al:"1,6", p:"€14,00", zh:"快醃糖醋高麗菜佐番茄與羅勒"},
-  {it:"Uova, cipolla e pancetta", en:"Eggs, onion and bacon", al:"3,6", p:"€14,00", zh:"炒蛋、洋蔥與培根"},
+ {type:"list", id:"insalate", it:"Crudità e Insalate", en:"Raw & Salads", zh:"生食與沙拉", items:[
+  {it:"Insalata di porcini", en:"Porcini mushroom salad", p:"€18,00", zh:"牛肝菌沙拉"},
+  {it:"Insalata di carciofi e tartufo", en:"Raw artichoke and truffle salad", p:"€22,00", zh:"生洋薊松露沙拉"},
+  {it:"Insalata di puntarelle con salsa all'aglio", en:"Puntarelle salad with garlic dressing", p:"€14,00", zh:"蒲公英菊苣(puntarelle)沙拉佐蒜醬"},
+  {it:"Insalata di puntarelle e tartufo", en:"Puntarelle and truffle salad", p:"€20,00", zh:"蒲公英菊苣松露沙拉"},
+  {it:"Insalata di carciofi e arance", en:"Raw artichoke and orange salad", p:"€20,00", zh:"生洋薊柳橙沙拉"},
+  {it:"Insalata di pomodoro, porcini, cipolla di Tropea e tartufo", en:"Tomato, porcini mushroom, Tropea red onion and truffle salad", p:"€22,00", zh:"番茄、牛肝菌、Tropea 紅洋蔥與松露沙拉"},
+  {it:"Insalata di puntarelle e carciofi crudi", en:"Puntarelle and raw artichoke salad", p:"€16,00", zh:"蒲公英菊苣與生洋薊沙拉"},
+  {it:"Insalata di pomodori, basilico e carciofi con aceto e origano", en:"Tomato, basil and raw artichoke salad with vinegar and oregano", p:"€14,00", zh:"番茄、羅勒與生洋薊沙拉,佐醋與奧勒岡"},
  ]},
- {it:"Altri Antipasti e Contorni", en:"Other Appetizers and Side Dishes", zh:"其他開胃菜與配菜", items:[
-  {it:"Trio di carciofi (crudo, fritto, fritto)", en:"Trio of artichokes (raw, fried, fried)", al:"1,6,7,10", p:"€15,00", zh:"洋薊三吃(生、炸、炸)"},
-  {it:"Carciofi e patate", en:"Artichokes and potatoes", al:"1,6", p:"€16,00", zh:"洋薊與馬鈴薯"},
-  {it:"Patate e funghi porcini", en:"Potatoes and porcini mushrooms", al:"1,6", p:"€19,00", zh:"馬鈴薯與牛肝菌"},
-  {it:"Funghi porcini in padella", en:"Porcini mushrooms in a pan", al:"1,6", p:"€18,00", zh:"香煎牛肝菌"},
-  {it:"Funghi porcini e tartufo", en:"Porcini mushrooms and truffle", al:"1,6,10", p:"€22,00", zh:"牛肝菌與松露"},
-  {it:"Carciofi dorati e fritti (alla giudia)", en:"Golden fried artichokes", al:"1,6", p:"€16,00", zh:"黃金炸洋薊(猶太式炸洋薊)"},
-  {it:"Carciofi gratinati", en:"Artichokes au gratin", al:"1,6,7", p:"€14,00", zh:"焗烤洋薊"},
+ {type:"list", id:"sfizi", it:"Sfizi", en:"Appetizers · Small Bites", zh:"小點 · 開胃", items:[
+  {it:"Patate alla Troiani", en:"Troiani-style potatoes", al:"1", p:"€14,00", zh:"Troiani 招牌馬鈴薯"},
+  {it:"Tris di carciofi: Giudia, Romana e Tempura", en:"Trio of artichokes: Jewish style, Roman style and tempura", al:"1,10", p:"€15,00", zh:"洋薊三吃:猶太式、羅馬式與天婦羅"},
+  {it:"Carciofi e patate", en:"Artichokes and potatoes", al:"1", p:"€16,00", zh:"洋薊與馬鈴薯"},
+  {it:"Porcini alla piastra", en:"Grilled porcini mushrooms", p:"€18,00", zh:"鐵板香煎牛肝菌"},
+  {it:"Porcini fritti dorati", en:"Deep-fried golden porcini mushrooms", al:"1,10", p:"€22,00", zh:"黃金酥炸牛肝菌"},
+  {it:"Porcini e tartufo", en:"Porcini mushrooms and truffle", p:"€24,00", zh:"牛肝菌與松露"},
+  {it:"Frittura di carciofi", en:"Deep-fried artichokes", al:"1,10", p:"€16,00", zh:"酥炸洋薊"},
+  {it:"Chips di carciofi", en:"Artichoke chips", p:"€16,00", zh:"洋薊脆片"},
+  {it:"Carciofi spadellati e trifolati, aglio e olio", en:"Sautéed and pan-fried artichokes with garlic and oil", p:"€14,00", zh:"蒜油香煎洋薊"},
+  {it:"Cipolle di Tropea in agrodolce piccante", en:"Sweet and spicy Tropea red onions", al:"12", p:"€14,00", zh:"糖醋微辣 Tropea 紅洋蔥"},
+  {it:"Melanzana alla parmigiana espressa", en:"Eggplant parmigiana (express)", al:"1,7,10", p:"€16,00", zh:"帕瑪森焗茄子(快速版)"},
+  {it:"Crauti in agrodolce espresso con pomodoro e basilico", en:"Sweet and sour sauerkraut with tomato and basil", al:"12", p:"€14,00", zh:"糖醋德式酸菜佐番茄與羅勒"},
+  {it:"Uova, cipolla e guanciale", en:"Eggs, onion and cured pork cheek", al:"3", p:"€14,00", zh:"蛋、洋蔥與豬頰培根(guanciale)"},
+  {it:"Uova e tartufo scorzone", en:"Eggs and black summer truffle (scorzone)", al:"3", p:"€14,00", zh:"蛋與夏季黑松露(scorzone)"},
  ]},
- {quote:"Artichokes were here before Amatriciana, before Carbonara. Artichokes are ancient. In 1604, the painter Michelangelo Merisi da Caravaggio threw an artichoke in the face of a waiter in a tavern right here nearby.",
-  qzh:"洋薊比 Amatriciana、比 Carbonara 更早就存在,洋薊是非常古老的食材。1604 年,畫家卡拉瓦喬(Michelangelo Merisi da Caravaggio)就在附近的一家小酒館,把一顆洋薊砸向侍者的臉。"},
- {it:"Primi Piatti", en:"First Courses", zh:"第一道 · 麵食(Primi)", items:[
-  {it:"Paccheri con carciofi e gorgonzola", en:"Paccheri with artichokes and gorgonzola", al:"1,6,7,10", p:"€18,00", zh:"大管麵 Paccheri 佐洋薊與戈貢佐拉藍紋起司"},
-  {it:"Paccheri con carciofi e pancetta", en:"Paccheri with artichokes and bacon", al:"1,6,10", p:"€14,00", zh:"大管麵佐洋薊與培根"},
-  {it:"Paccheri all'amatriciana con carciofi", en:"Paccheri amatriciana with artichokes", al:"1,6,10", p:"€14,00", zh:"阿瑪翠斯醬(番茄培根)大管麵佐洋薊"},
-  {it:"Gnocchi con alici, puntarelle e pecorino", en:"Gnocchi with anchovies, puntarelle and pecorino", al:"1,4,6,7,10", p:"€16,00", zh:"馬鈴薯麵疙瘩佐鯷魚、蒲公英菊苣與佩克里諾羊起司"},
-  {it:"Gnocchi cacio e pepe con carciofi", en:"Gnocchi cacio e pepe with artichokes", al:"1,6,7,10", p:"€16,00", zh:"起司黑胡椒(cacio e pepe)麵疙瘩佐洋薊"},
-  {it:"Gnocchi con funghi porcini, tartufo e carciofi", en:"Gnocchi with porcini mushrooms, truffle and artichokes", al:"1,6,10", p:"€22,00", zh:"麵疙瘩佐牛肝菌、松露與洋薊"},
-  {it:"Fettuccine alla carbonara con carciofi", en:"Fettuccine carbonara with artichokes", al:"1,3,6,7,10", p:"€16,00", zh:"卡波納拉(培根蛋黃)寬麵佐洋薊"},
-  {it:"Fettuccine con carciofi e mascarpone", en:"Fettuccine with artichokes and mascarpone", al:"1,3,6,7,10", p:"€16,00", zh:"寬麵佐洋薊與馬斯卡彭起司"},
-  {it:"Fettuccine ai quattro formaggi con carciofi", en:"Fettuccine with four cheeses and artichokes", al:"1,3,6,7,10", p:"€18,00", zh:"四種起司寬麵佐洋薊"},
+ {type:"feature", it:"La cicoria più buona del mondo", en:"The Most Delicious Chicory in the World", p:"€20,00 / porzione · per portion", zh:"全世界最美味的菊苣 · 每份 €20", d:"100% olio extravergine italiano, aglio di Sulmona e tanta passione. Un contorno che è una specialità. · 100% Italian extra virgin olive oil, garlic from Sulmona and a lot of passion — a side dish that is a specialty. · 100% 義大利特級初榨橄欖油 + Sulmona 大蒜,一道「配菜級的招牌」。"},
+ {type:"list", id:"primi", it:"Primi Piatti", en:"First Courses", zh:"第一道 · 麵食", items:[
+  {it:"Rigatoni carciofi e gorgonzola", en:"Rigatoni with artichokes and gorgonzola", al:"1,7", p:"€18,00", zh:"水管麵佐洋薊與戈貢佐拉藍紋起司"},
+  {it:"Rigatoni carciofi, guanciale", en:"Rigatoni with artichokes and cured pork cheek", al:"1,3,7", p:"€14,00", zh:"水管麵佐洋薊與豬頰培根"},
+  {it:"Rigatoni amatriciana con carciofi", en:"Rigatoni amatriciana with artichokes", al:"1", p:"€14,00", zh:"阿瑪翠斯醬水管麵佐洋薊"},
+  {it:"Gnocco alici, puntarelle e pecorino", en:"Potato gnocchi with anchovies, puntarelle and pecorino", al:"1,4,7", p:"€16,00", zh:"馬鈴薯麵疙瘩佐鯷魚、蒲公英菊苣與佩克里諾羊起司"},
+  {it:"Gnocco cacio e pepe carciofi", en:"Potato gnocchi with pecorino, black pepper and artichokes", al:"1,7", p:"€14,00", zh:"起司黑胡椒麵疙瘩佐洋薊"},
+  {it:"Gnocco porcini e tartufo carciofi", en:"Potato gnocchi with porcini mushrooms, truffle and artichokes", al:"1,7", p:"€22,00", zh:"麵疙瘩佐牛肝菌、松露與洋薊"},
+  {it:"Tonnarelli carbonara, carciofi", en:"Tonnarelli carbonara with artichokes", al:"1,3,7", p:"€16,00", zh:"卡波納拉方麵(tonnarelli)佐洋薊"},
+  {it:"Tonnarelli carciofi mascarpone", en:"Tonnarelli with artichokes and mascarpone", al:"1,7", p:"€16,00", zh:"方麵佐洋薊與馬斯卡彭起司"},
+  {it:"Tonnarelli quattro formaggi carciofi", en:"Tonnarelli with four cheeses and artichokes", al:"1,7", p:"€18,00", zh:"四種起司方麵佐洋薊"},
  ]},
- {it:"Secondi – Pasta", en:"Main Courses – Pasta", zh:"主餐 · 麵食", items:[
-  {it:"Paccheri con carciofi e gorgonzola", en:"Paccheri with artichokes and gorgonzola", al:"1,6,7,10", p:"€18,00", zh:"大管麵 Paccheri 佐洋薊與戈貢佐拉藍紋起司"},
-  {it:"Paccheri con carciofi e pancetta", en:"Paccheri with artichokes and bacon", al:"1,6,10", p:"€14,00", zh:"大管麵佐洋薊與培根"},
-  {it:"Paccheri all'amatriciana con carciofi", en:"Paccheri amatriciana with artichokes", al:"1,6,10", p:"€14,00", zh:"阿瑪翠斯醬大管麵佐洋薊"},
-  {it:"Gnocchi con alici, puntarelle e pecorino", en:"Gnocchi with anchovies, puntarelle and pecorino", al:"1,4,6,7,10", p:"€16,00", zh:"麵疙瘩佐鯷魚、蒲公英菊苣與佩克里諾羊起司"},
-  {it:"Gnocchi cacio e pepe con carciofi", en:"Gnocchi cacio e pepe with artichokes", al:"1,6,7,10", p:"€16,00", zh:"起司黑胡椒麵疙瘩佐洋薊"},
-  {it:"Gnocchi con funghi porcini, tartufo e carciofi", en:"Gnocchi with porcini mushrooms, truffle and artichokes", al:"1,6,10", p:"€22,00", zh:"麵疙瘩佐牛肝菌、松露與洋薊"},
-  {it:"Fettuccine alla carbonara con carciofi", en:"Fettuccine carbonara with artichokes", al:"1,3,6,7,10", p:"€16,00", zh:"卡波納拉寬麵佐洋薊"},
-  {it:"Fettuccine con carciofi e mascarpone", en:"Fettuccine with artichokes and mascarpone", al:"1,3,6,7,10", p:"€16,00", zh:"寬麵佐洋薊與馬斯卡彭起司"},
-  {it:"Fettuccine ai quattro formaggi con carciofi", en:"Fettuccine with four cheeses and artichokes", al:"1,3,6,7,10", p:"€18,00", zh:"四種起司寬麵佐洋薊"},
+ {type:"list", id:"dolci", it:"Dolci", en:"Desserts", zh:"甜點", items:[
+  {it:"Fragole con panna", en:"Strawberries with whipped cream", al:"7", p:"€6,00", zh:"草莓佐鮮奶油"},
+  {it:"Cartoccio di frutta mista", en:"Mixed fresh fruit cone", p:"€6,00", zh:"綜合鮮果杯(錐筒)"},
  ]},
- {it:"Dolci", en:"Desserts", zh:"甜點", items:[
-  {it:"Fragole con panna montata", en:"Strawberries with whipped cream", al:"7", p:"€5,00", zh:"草莓佐鮮奶油"},
+ {type:"setmenu", id:"menu39", it:"Menù Carciofo", en:"Artichoke Menu", p:"€39 / persona", zh:"洋薊套餐(每人 €39)", note:"Minimo 2 persone per tavolo · 每桌最少 2 人 · bevande incluse (vino della casa e acqua) 含飲料(店家葡萄酒與水)", groups:[
+   {t:"3 Antipasti · 3 Starters · 3 道前菜", lines:[
+     "Carciofo crudo con olio, limone e pepe — Raw artichoke w/ olive oil, lemon & pepper — 生洋薊佐橄欖油、檸檬與胡椒",
+     "Carciofo con tartufo scorzone grattugiato — Artichoke w/ grated black truffle — 洋薊佐刨夏季黑松露",
+     "Frittura di carciofi (acqua e farina Verna) — Fried artichoke (water & ancient Verna wheat flour) — 炸洋薊(古小麥 Verna 麵衣)"]},
+   {t:"1 Carciofo della tradizione a scelta · 1 Traditional artichoke (choice) · 傳統洋薊二選一", lines:[
+     "Carciofo alla Giudia — Jewish-style artichoke — 猶太式炸洋薊",
+     "Carciofo alla Romana — Roman-style artichoke — 羅馬式燉洋薊"]},
+   {t:"1 Primo a scelta · 1 First course (choice) · 第一道三選一", lines:[
+     "Paccheri con carciofi, guanciale e pecorino — Paccheri w/ artichokes, guanciale & pecorino — 大管麵佐洋薊、豬頰培根與羊起司",
+     "Tonnarelli cacio, pepe e carciofo — Tonnarelli cacio e pepe w/ artichoke — 起司黑胡椒方麵佐洋薊",
+     "Gnocchi con carciofi e pecorino — Gnocchi w/ artichokes & pecorino — 麵疙瘩佐洋薊與羊起司"]},
+   {t:"1 Crocchetta di carciofo · 1 Artichoke croquette · 洋薊可樂餅 ×1", lines:[]},
+   {t:"1 Dessert a scelta · 1 Dessert (choice) · 甜點二選一", lines:[
+     "Fragole con panna — Strawberries w/ whipped cream — 草莓佐鮮奶油",
+     "Ananas — Pineapple — 鳳梨"]},
+ ]},
+ {type:"setmenu", id:"menu59", it:"Menù Carciofi, Funghi Porcini & Tartufo", en:"Artichokes, Porcini & Truffle Menu", p:"€59 / persona", zh:"洋薊・牛肝菌・松露套餐(每人 €59)", note:"Minimo 2 persone per tavolo · 每桌最少 2 人 · bevande incluse 含飲料(店家葡萄酒與水)", groups:[
+   {t:"Antipasti e degustazioni · Starters & tastings · 前菜與品嚐", lines:[
+     "Patate alla Luigi Troiani — Potatoes à la Luigi Troiani — Luigi Troiani 招牌馬鈴薯",
+     "Carciofo crudo con olio e limone — Raw artichoke w/ olive oil and lemon — 生洋薊佐橄欖油與檸檬",
+     "Carciofo con tartufo scorzone grattugiato — Artichoke w/ grated black truffle — 洋薊佐刨黑松露",
+     "Insalata di funghi porcini freschi o funghi shiitake — Fresh porcini or shiitake mushroom salad — 新鮮牛肝菌或香菇沙拉",
+     "Chips di carciofo — Artichoke chips — 洋薊脆片",
+     "1 Carciofo alla Romana · 1 Carciofo alla Giudia — Roman-style & Jewish-style artichoke — 羅馬式 + 猶太式洋薊各一",
+     "Crocchetta di carciofo — Artichoke croquette — 洋薊可樂餅",
+     "Frittata di carciofi — Artichoke omelette — 洋薊烘蛋"]},
+   {t:"Primo a scelta · First course (choice) · 第一道二選一", lines:[
+     "Paccheri con carciofi, guanciale e pecorino — Paccheri w/ artichokes, guanciale & pecorino — 大管麵佐洋薊、豬頰培根與羊起司",
+     "Gnocchi con porcini e carciofi — Gnocchi w/ porcini & artichokes — 麵疙瘩佐牛肝菌與洋薊"]},
+   {t:"Dopo il primo · After the first course · 第一道之後", lines:[
+     "Porcini alla piastra — Grilled porcini mushrooms — 鐵板牛肝菌"]},
+   {t:"Dolce a scelta · Dessert (choice) · 甜點二選一", lines:[
+     "Fragole con panna — Strawberries w/ whipped cream — 草莓佐鮮奶油",
+     "Ananas — Pineapple — 鳳梨"]},
+ ]},
+ {type:"setmenu", id:"vegan", it:"Vegan Path", en:"The Vegan Path", p:"€120 / persona", zh:"純素饗宴(每人 €120)", note:"No limits · wine included · 無限量・含葡萄酒 · 100% plant based 全植物", groups:[
+   {t:"", lines:[
+     "100% plant based, freshest Italian seasonal ingredients, no animal ingredients — 100% 植物性、當季最新鮮義大利食材、無任何動物性成分",
+     "An unforgettable, unique experience for real vegans — 為真正純素者打造、難忘且獨一無二的體驗"]},
+ ]},
+ {type:"wines", id:"vini", it:"Vini Selezionati", en:"Selected Wines", zh:"精選酒單", groups:[
+   {t:"Vini Selezionati · Selected Wines · 精選(產區/年份)", items:[
+     {n:"Il Punto Cotarella", m:"Cotarella · Bianco 2023", p:"€60,00"},
+     {n:"La Braccesca", m:"Nobile di Montepulciano · Rosso 2023", p:"€30,00"},
+     {n:"Villa Antinori", m:"Antinori · Rosso 2023", p:"€30,00"},
+     {n:"Peppoli", m:"Antinori · Rosso 2024", p:"€25,00"},
+     {n:"Vermentino", m:"Antinori · Bianco 2023", p:"€30,00"},
+     {n:"Fichimori", m:"Tormaresca · Rosato 2025", p:"€20,00"},
+     {n:"Scalabrone", m:"Antinori · Rosé 2025", p:"€25,00"},
+     {n:"Rospiglioso", m:"Falesco · Rosso 2024", p:"€28,00"},
+     {n:"Sorelle", m:"Cotarella · Rosé 2025", p:"€35,00"},
+     {n:"Franciacorta Brut", m:"Conti Ducco · Bollicine", p:"€29,00"},
+     {n:"Franciacorta Blanc de Blancs", m:"Conti Ducco · Bollicine", p:"€59,00"},
+   ]},
+   {t:"Bianchi d'Autore · Signature Whites · 名家白酒", items:[
+     {n:"Vintage", m:"Jermann", p:"€80,00"},
+     {n:"Pinot Grigio", m:"Jermann", p:"€35,00"},
+     {n:"Capo Martino", m:"Jermann", p:"€80,00"},
+     {n:"Dreams", m:"Jermann", p:"€80,00"},
+     {n:"Marchese Trebbi Futura", m:"Orvietano", p:"€22,00"},
+   ]},
+   {t:"I Grandi Vini · The Great Wines · 偉大酒款", items:[
+     {n:"Solaia", m:"Antinori", p:"€360,00"},
+     {n:"Guado al Tasso", m:"Antinori", p:"€160,00"},
+     {n:"Tignanello", m:"Antinori", p:"€150,00"},
+     {n:"Le Macioche", m:"Brunello di Montalcino", p:"€118,00"},
+     {n:"Montiano", m:"Cotarella", p:"€80,00"},
+     {n:"Cervaro della Sala", m:"Antinori", p:"€80,00"},
+     {n:"Pian delle Vigne", m:"Antinori · Brunello", p:"€78,00"},
+     {n:"Badia a Passignano", m:"Antinori", p:"€55,00"},
+   ]},
  ]},
 ];
-const LEGEND=[["1","Cereals containing gluten · 含麩質穀物"],["2","Crustaceans · 甲殼類"],["3","Eggs · 蛋"],["4","Fish · 魚"],["5","Peanuts · 花生"],["6","Soybeans · 大豆"],["7","Milk (incl. lactose) · 奶(含乳糖)"],["8","Nuts · 堅果"],["9","Celery · 芹菜"],["10","Mustard · 芥末"],["11","Sesame seeds · 芝麻"],["12","Sulfur dioxide & sulfites · 二氧化硫與亞硫酸鹽"],["13","Lupin · 羽扇豆"],["14","Molluscs · 軟體動物"]];
 
-function secHTML(s){
-  if(s.quote) return `<div class="quote">${s.quote}<span class="zh">${s.qzh}</span></div>`;
-  return `<section>
-    <div class="sec-h">${s.it}<span class="zh">${s.en} · ${s.zh}</span></div>
-    ${s.items.map(x=>`<div class="item">
-      <div class="row"><span class="it">${x.it}</span>${x.al?`<span class="al">(${x.al})</span>`:""}<span class="dots"></span><span class="price">${x.p}</span></div>
-      <div class="ln"><span class="lang">EN</span><span class="en">${x.en}</span></div>
-      <div class="ln"><span class="lang">中</span><span class="zh">${x.zh}</span></div></div>`).join("")}
-  </section>`;
+function listHTML(s){
+  return `<section id="${s.id}"><div class="sec-h">${s.it}<span class="en">${s.en}</span><span class="zh">${s.zh}</span></div>`+
+   s.items.map(x=>`<div class="item">
+     <div class="row"><span class="it">${x.it}</span>${x.al?`<span class="lab" style="width:auto;color:var(--soft)">(${x.al})</span>`:""}<span class="dots"></span><span class="price">${x.p}</span></div>
+     <div class="ln"><span class="lab">EN</span><span class="en">${x.en}</span></div>
+     <div class="ln"><span class="lab">中</span><span class="zh">${x.zh}</span></div></div>`).join("")+`</section>`;
 }
-document.getElementById("menu").innerHTML = SECTIONS.map(secHTML).join("") + `
-  <div class="legend">
-    <h3>Allergens Legend<span class="zh">過敏原對照(菜名後括號數字)</span></h3>
-    <div class="grid">${LEGEND.map(([n,t])=>`<div class="g"><b>${n}</b><span>${t}</span></div>`).join("")}</div>
-  </div>
-  <div class="notice">
-    <b>Notice to Customers · 顧客須知</b><br>
-    Our dishes may contain different allergens; we cannot guarantee the complete absence of cross-contamination. Please inform our staff of any allergies before ordering.<br>
-    <span style="color:var(--en)">本店餐點可能含不同過敏原,無法保證完全無交叉污染;點餐前請告知店員您的過敏或飲食限制。</span>
-  </div>`;
+function featHTML(s){
+  return `<div class="feature"><div class="ft-t">${s.it}<br><span style="font-size:.9rem;color:var(--soft)">${s.en}</span></div><div class="ft-p">${s.p} · ${s.zh}</div><div class="ft-d">${s.d}</div></div>`;
+}
+function setHTML(s){
+  return `<section id="${s.id}" class="setmenu-wrap"><div class="setmenu">
+    <div class="sm-h"><div class="sm-t">${s.it}<span class="zh">${s.en} · ${s.zh}</span></div><div class="sm-p">${s.p}</div></div>
+    <div class="sm-note">${s.note}</div>
+    ${s.groups.map(g=>`<div class="grp">${g.t?`<div class="grp-t">${g.t}</div>`:""}${g.lines.map(l=>`<div class="li">${g.t?"· ":""}${l}</div>`).join("")}</div>`).join("")}
+  </div></section>`;
+}
+function winesHTML(s){
+  return `<section id="${s.id}" class="wines"><div class="sec-h">${s.it}<span class="en">${s.en}</span><span class="zh">${s.zh}</span></div>`+
+   s.groups.map(g=>`<div class="wg"><div class="wg-t">${g.t}</div>`+
+     g.items.map(w=>`<div class="w"><span class="wn">${w.n} <span class="wm">${w.m}</span></span><span class="wp">${w.p}</span></div>`).join("")+`</div>`).join("")+
+   `<div class="wnote">※ 原菜單照中部分酒款名稱/價格被貼紙遮住,此處僅列出可辨識者;完整酒單請洽店員。</div></section>`;
+}
+const render={list:listHTML, feature:featHTML, setmenu:setHTML, wines:winesHTML};
+document.getElementById("menu").innerHTML = SECTIONS.map(s=>render[s.type](s)).join("");
+document.getElementById("toc").innerHTML = SECTIONS.filter(s=>s.id).map(s=>`<a href="#${s.id}">${s.zh.replace(/\(.*\)/,"").replace(/ ·.*/,"")}</a>`).join("");
 </script>
 </body>
 </html>
